@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Change the /images/ to your actual image location
+RewriteCond %{REQUEST_URI} ^/images/
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-f
+RewriteRule (.*) /images/cache.php?querystring=$1 [L]
